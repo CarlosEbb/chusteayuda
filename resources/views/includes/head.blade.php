@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="{{asset('/image/logo/logo-pequeno.png')}}" type="image/x-icon">
 
   <!-- Styles -->
-  <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
   {{-- condicional --}}
   <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}">
   {{-- <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}"> --}}

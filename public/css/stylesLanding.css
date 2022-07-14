@@ -141,16 +141,20 @@ main .contenedor-img {
 }
 
 .fa.fa-instagram { 
-    background: #d6249f;
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+     background: #d6249f;
+     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+}
 
-  .fa.fa-youtube-square {
-    color: #FF0000;
-  }
+.fa.fa-youtube-square {
+     color: #FF0000;
+}
 
-  .fa.fa-facebook-official {
-    color: #4267B2;
-  }
+.fa.fa-facebook-official {
+     color: #4267B2;
+}
+
+a {
+     text-decoration: none;  
+}

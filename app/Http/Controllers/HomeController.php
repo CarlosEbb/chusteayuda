@@ -39,11 +39,18 @@ class HomeController extends Controller
     
     public function contacto(Request $request)
     {
+        $datos = $this->validate(request(), [
+            'email' => 'required|string',
+            'mensaje' => 'required|string',
+            'nombre' => 'required|string',
+            'asunto' => 'required|string',
+            //'name' => 'required|string',
+        ]);
         $data=array('to'=> $request->email, 'mensaje' => $request->mensaje, 'nombre' => $request->nombre, 'email' => $request->email, 'asunto' => $request->asunto);
 
         Mail::send('correos.contacto',$data,function($mensaje) use ($data){
             $mensaje->from(env('MAIL_USERNAME'),'Notificación de Reporte');
-            $mensaje->to(env('MAIL_USERNAME'))->subject('Contacto');
+            $mensaje->to(env('MAIL_USERNAME_INFO'))->subject('Contacto');
         });
 
         Session::flash('mensaje','Enviado correctamente');
