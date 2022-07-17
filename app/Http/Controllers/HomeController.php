@@ -20,23 +20,9 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+
     }
 
-    public function index()
-    {
-        if (Auth::check()) {
-            if(Auth::user()->rol_id == 1){
-                $clientes = Cliente::all();
-                return view('home')->with(compact('clientes'));
-            }else
-                return back();
-
-        }else{
-            return redirect('/');
-        }
-    }
-    
     public function contacto(Request $request)
     {
         $datos = $this->validate(request(), [
@@ -57,11 +43,5 @@ class HomeController extends Controller
         return back();
     }
 
-    public function incidencias(Request $request, $id)
-    {
-        if($request->tipo == 1)
-            return redirect('/evaluacion-del-desarrollo?cliente_id='.$id);
-
-    }
-    
+ 
 }
