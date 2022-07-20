@@ -29,7 +29,7 @@
 
                   <div class="row mt-3">
                     <div class="col-md-4 col-6">
-                      <button type="button" class="btn btn-primary btn-lg p-3 rounded-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Contáctame</button>
+                      <button type="button" class="btn btn-primary btn-lg p-3 rounded-4" data-bs-toggle="modal" data-bs-target="#modal_contactame">Contáctame</button>
                       @include('modals.contactame')
                     </div>
                     <div class="col-md-6 col-6 text-start">

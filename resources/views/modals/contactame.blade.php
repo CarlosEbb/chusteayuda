@@ -1,5 +1,5 @@
 <!-- Contactame -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="#modal_contactame" aria-hidden="true">
+<div class="modal fade text-start" id="modal_contactame" tabindex="-1" aria-labelledby="#modal_contactame" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
@@ -10,23 +10,23 @@
             {!! Form::open(['route'=>'contacto', 'method'=>'POST', 'class'=>'', 'files' => true, 'id' => 'form_contactame', 'role' => 'form']) !!}
                 <div class="mb-3 ">
                 <label for="nombre" class="form-label mb-1">Nombre completo</label>
-                    <input type="text" class="form-control p-3 border border-primary" name="nombre" id="nombre" placeholder="Nombre y apellido">
+                    <input type="text" class="form-control p-3" name="nombre" id="nombre" placeholder="Nombre y apellido">
                 </div>
 
                 <div class="mb-3 ">
                     <label for="correo-electronico" class="form-label mb-1">Correo electrónico</label>
-                    <input type="email" class="form-control p-3 border border-primary" name="email" id="correo-electronico"
+                    <input type="email" class="form-control p-3" name="email" id="correo-electronico"
                         placeholder="name@example.com">
                 </div>
 
                 <div class="mb-3 ">
                     <label for="asunto" class="form-label mb-1">Asunto</label>
-                    <input type="text" class="form-control p-3 border border-primary" name="asunto" id="asunto" placeholder="Asunto">
+                    <input type="text" class="form-control p-3" name="asunto" id="asunto" placeholder="Asunto">
                 </div>
 
                 <div class="mb-3 ">
                     <label for="mensaje" class="form-label mb-1">Mensaje</label>
-                    <textarea class="form-control p-3 border border-primary" name="mensaje" id="mensaje" rows="4"></textarea>
+                    <textarea class="form-control p-3" name="mensaje" id="mensaje" rows="4"></textarea>
                 </div>
             {!! Form::close() !!}
         </div>
