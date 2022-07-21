@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landing');
-});
+})->name('landing');
+
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::post('/contacto', 'App\Http\Controllers\HomeController@contacto')->name('contacto');
+
+/* Login */
+Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+Auth::routes();

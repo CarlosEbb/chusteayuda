@@ -23,6 +23,19 @@ class HomeController extends Controller
 
     }
 
+    public function index()
+    {
+        if (Auth::check()) {
+            if(Auth::user()->rol_id == 1){
+                return view('home');
+            }else
+                return back();
+
+        }else{
+            return redirect('/');
+        }
+    }
+
     public function contacto(Request $request)
     {
         $datos = $this->validate(request(), [

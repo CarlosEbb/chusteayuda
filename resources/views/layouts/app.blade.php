@@ -27,8 +27,11 @@
   
 
   <script src="{{asset("/js/bootstrap.bundle.min.js")}}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-  <script src="{{ asset('js/main.js') }}"></script>
+  @if(\Route::currentRouteName() == 'landing')
+    {{-- Escritura automatica en landing --}}
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+  @endif
   @yield('js')
 </body>
 </html>
