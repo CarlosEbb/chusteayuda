@@ -10,6 +10,9 @@
   <!-- Styles --> 
   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('css/style-landing.css') }}" rel="stylesheet">
+  {{-- Styles Sidebars --}}
+  <link href="{{asset('css/style-sidebars.css')}}" rel="stylesheet">
+  <link href="{{asset('css/sidebars.css')}}" rel="stylesheet">
   {{-- link icons --}}
   <link rel="shortcut icon" href="{{asset('/image/logo/logo-pequeno.png')}}" type="image/x-icon">
   <title>{{env('APP_NAME')}}</title>
@@ -17,7 +20,16 @@
   @yield('head')
 </head>
 <body>
-  @yield('content')
+
+  <div class="d-flex align-items-start">
+    <div class="nav flex-column p-3 sidebar-gestion-cliente" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      @include('includes.sidebar')
+    </div>
+    <div class="b-example-divider b-example-vr"></div>
+    <div class="container m-5">
+      @yield("content")
+    </div>
+  </div>
 
   <a href="https://api.whatsapp.com/send?phone=51931145727" class="float p-1" target="_blank">
     <img src="{{asset('/image/icon/whatsapp.svg')}}" style="width: 34px;">
