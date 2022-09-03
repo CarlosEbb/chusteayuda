@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
   <div class="col-12 mb-3">
-  <h1>Materiales</h1><br>
+  <h1>Registrar Materiales</h1><br>
     <div class="card">
       <div class="card-body">
         <form action="/materiales" method="POST" enctype="multipart/form-data"> @csrf
@@ -35,7 +35,7 @@
           </div>
 
           <div class="d-grid gap-2">
-            <input class="btn btn-primary" type="submit" value="Agregar">
+            <input class="btn btn-primary" type="submit" value="Registrar">
           </div>
         </form>
 
