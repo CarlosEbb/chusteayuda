@@ -2,7 +2,7 @@
 @section('content')
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-10 mt-5 mx-auto position-relative">
+      <div class="col-12 col-md-10 mt-5 mx-auto position-relative card-P">
         <div class="f">
           <div class="fondo-1 opacity-25">
             <img class="opacity-75 pe-none img-fluid" src="{{asset("/image/Vector.png")}}" alt="">
@@ -48,8 +48,35 @@
               <a href="https://www.tiktok.com/@chusteayuda"><img src="{{asset('/image/icon/tiktok.png')}}" style="width: 34px;"></a>
             </div>
           </div>
+
+        <h3 class="titulo text-center">Material didáctico</h3>
+        <div class="row">
+        @foreach(\App\Models\Material::all() as $key => $material)
+          <div class="col-12">
+            <div class="card m-5">
+              <div class="row g-0">
+                <div class="col-md-4 align-content-center">
+                  <img src="{{$material->imagen}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Trazos</h5>
+                    
+                      <div class="overflow-auto card-text" style="height: 225px;">{{$material->descripcion}}</div>
+                      
+                    <p class="card-text"><small class="text-muted">by chusTEAyuda</small></p>
+                  </div>
+                </div>
+                <div class="d-grid gap-2">
+                  <a href="{{$material->archivo}}" target="_blank" class="btn btn-primary" type="button">Descargar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        @endforeach
         </div>
       </div>
     </div>
   </div>
+  
 @endsection

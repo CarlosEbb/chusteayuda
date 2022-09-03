@@ -24,3 +24,5 @@ Route::post('/contacto', 'App\Http\Controllers\HomeController@contacto')->name('
 /* Login */
 Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 Auth::routes();
+
+Route::resource('materiales', App\Http\Controllers\MaterialesController::class);

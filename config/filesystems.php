@@ -53,6 +53,21 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
 
+        'materiales' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/uploads/materiales',
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+        ],
+
+
+        'archivos' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/uploads/archivos',
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*
