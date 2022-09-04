@@ -15,31 +15,7 @@
           <div class="card-header bg-transparent border-0 text-center">
             <img class="img-fluid my-4" src="{{asset('/image/logo/logo.png')}}" alt="" width="150">
           </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-12 col-md-12 col-lg-6">
-                <div class="contenedor-img d-flex align-content-center justify-content-center h-100">
-                  <img class="img-fluid" src="{{asset('/image/draw.svg')}}" alt="" width="350">
-                </div>
-              </div>
-              <div class="col-12 col-md-12 col-lg-6">
-                <div class="contenedor-texto mt-2">
-                  <h3 class="titulo">Estamos trabajando <br>para <span class="typed"></span></h3>
-                  <p class="mb-0">Estamos realizando tareas de mantenimiento, disculpa las molestias. Estaremos de vuelta en breve. <br> Si necesitas hablar con nosotros de forma urgente, puedes enviarnos un <a href="mailto:info@chusteayuda.com">email.</a></p>
-
-                  <div class="row mt-3">
-                    <div class="col-md-4 col-6">
-                      <button type="button" class="btn btn-primary btn-lg p-3 rounded-4" data-bs-toggle="modal" data-bs-target="#modal_contactame">Contáctame</button>
-                      @include('modals.contactame')
-                    </div>
-                    <div class="col-md-6 col-6 text-start">
-                      <button type="button" class="btn btn-light btn-lg text-center p-3 rounded-4">Saber mas</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
           <div class="card-footer w-75 mx-auto border-0 bg-transparent">
             <div class="d-flex justify-content-evenly flex-wrap my-4">
               <a href="https://www.instagram.com/chusteayuda/"><img src="{{asset('/image/icon/instagram.png')}}" style="width: 34px;"></a>
@@ -60,9 +36,9 @@
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title">Trazos</h5>
+                    <h5 class="card-title">{{$material->nombre}}</h5>
                     
-                      <div class="overflow-auto card-text" style="height: 225px;">{{$material->descripcion}}</div>
+                      <div class="overflow-auto card-text" style="height: 225px;"><?php echo $material->descripcion ?></div>
                       
                     <p class="card-text"><small class="text-muted">by chusTEAyuda</small></p>
                   </div>

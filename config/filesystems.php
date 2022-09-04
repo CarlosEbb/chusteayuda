@@ -55,7 +55,7 @@ return [
 
         'materiales' => [
             'driver' => 'local',
-            'root'   => public_path() . '/uploads/materiales',
+            'root'   => public_path() . '_html/uploads/materiales',
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],
@@ -63,7 +63,7 @@ return [
 
         'archivos' => [
             'driver' => 'local',
-            'root'   => public_path() . '/uploads/archivos',
+            'root'   => public_path() . '_html/uploads/archivos',
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],
