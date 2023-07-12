@@ -17,6 +17,22 @@ Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/material', function () {
+    return view('material');
+})->name('material');
+
+Route::get('/tienda', function () {
+    return view('tienda');
+})->name('tienda');
+
+Route::get('/contacto', function () {
+    return view('contacto');
+})->name('contacto');
+
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::post('/contacto', 'App\Http\Controllers\HomeController@contacto')->name('contacto');

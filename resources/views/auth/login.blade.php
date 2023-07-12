@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-
+<br><br><br>
 <div class="bg-login d-flex align-items-center">
     <div class="container">
         <div class="row d-flex justify-content-start h-100">
@@ -65,4 +65,5 @@
         </div>
     </div>
 </div>
+<br><br><br>
 @endsection
