@@ -1,4 +1,8 @@
 <?php
+$host = '';
+if(config('app.env') != 'local'){
+    $host = '_html';
+}
 
 return [
 
@@ -55,7 +59,7 @@ return [
 
         'materiales' => [
             'driver' => 'local',
-            'root'   => public_path() . '_html/uploads/materiales',
+            'root'   => public_path() . $host.'/uploads/materiales',
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],
@@ -63,7 +67,7 @@ return [
 
         'archivos' => [
             'driver' => 'local',
-            'root'   => public_path() . '_html/uploads/archivos',
+            'root'   => public_path() . $host.'/uploads/archivos',
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],

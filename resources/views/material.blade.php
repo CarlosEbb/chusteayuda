@@ -39,7 +39,7 @@
         <div class="row">
           @foreach(\App\Models\Material::all() as $key => $value)
             <div class="col-3 card">
-              <a href="{{$value->archivo}}" target="_blank">
+              <a href="/materiales/{{$value->id}}" target="_blank">
                 <img class="card-img-top" src="{{$value->imagen}}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{$value->nombre}}</h5>

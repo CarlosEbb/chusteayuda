@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\Cliente;
 use \App\Models\Reporte;
+use \App\Models\Material;
 
 use Illuminate\Support\Facades\Mail;
 use Session;
@@ -27,7 +28,8 @@ class HomeController extends Controller
     {
         if (Auth::check()) {
             if(Auth::user()->rol_id == 1){
-                return view('home');
+                $materiales = Material::all();
+                return view('home',compact('materiales'));
             }else
                 return back();
 

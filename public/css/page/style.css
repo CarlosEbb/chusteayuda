@@ -106,12 +106,90 @@ a:focus {
   box-shadow: none;
 }
 
-.top_container {
+
+@media (max-width: 993px) {
+
+  .top_container {
+    content: "";
+    position: relative;
+    width: 100%;
+    height: 200%;
+    background: url(../../images/hero-bg.png);
+    
+    
+    background-size: 100%;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1250px) {
+  .top_container {
+    height: 60%vh;
+  }
+  .top_container {
+    position: relative;
+    width: 100%;
+    
+    background: url(../../images/hero-bg.png);
+    background-size: 50%;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 1250px) and (max-width: 1800px) {
+  .top_container {
+    height: 60%vh;
+  }
+  .top_container {
+    position: relative;
+    width: 100%;
+    
+    background: url(../../images/hero-bg.png);
+    background-size: 45%;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 1800px) and (max-width: 2000px) {
+  .top_container {
+    height: 60%vh;
+  }
+  .top_container {
+    position: relative;
+    width: 100%;
+    
+    background: url(../../images/hero-bg.png);
+    background-size: 50%;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 2000px) {
+
+  .top_container {
+    content: "";
+    position: relative;
+    width: 100%;
+    height: 200%;
+    background: url(../../images/hero-bg.png);
+    
+    
+    background-size: 50%;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+}
+
+.top_container_dos {
   height: 95vh;
   position: relative;
 }
 
-.top_container::before {
+.top_container_dos::before {
   content: "";
   position: absolute;
   width: 48%;
@@ -123,16 +201,17 @@ a:focus {
   z-index: -1;
 }
 
-.top_container.sub_pages::before {
+
+.top_container_dos.sub_pages::before {
   background-size: 400px 200px;
   background-position: top left;
 }
 
-.top_container.sub_pages {
+.top_container_dos.sub_pages {
   height: 35vh;
 }
 
-.top_container.sub_page {
+.top_container_dos.sub_page {
   height: auto;
 }
 

@@ -11,7 +11,7 @@
             <div class="col-12 col-md-8 col-lg-6 col-xl-4">
                 <div class="card login py-1 py-md-2 py-lg-3">
                     <a href="/" class="mx-auto mt-5">
-                        <img src="{{asset('image/logo/logo.png')}}"   width="100"  class="img-fluid"  alt="{{env('APP_NAME')}}">
+                        <img src="{{asset('images/logo.png')}}"   width="100"  class="img-fluid"  alt="{{env('APP_NAME')}}">
                     </a>
                     <div class="card-body px-3 px-md-5 py-1 py-md-3 py-lg-5">
                         <h5 class="login-title my-4  mb-md-4">Ingrese a su cuenta</h5>
@@ -53,11 +53,7 @@
                                 </button>
                             </div>
 
-                            @if (Route::has('password.request'))
-                                <a class="d-block my-3 text-center" href="{{ route('password.request') }}">
-                                    {{ __('¿Se te olvidó tu contraseña?') }}
-                                </a>
-                            @endif
+                           
                         </form>
                     </div>
                 </div>

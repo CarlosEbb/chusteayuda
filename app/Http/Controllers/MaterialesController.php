@@ -40,12 +40,14 @@ class MaterialesController extends Controller
      */
     public function store(Request $request)
     {
-        /*
+        
         $datos = $this->validate(request(), [
-            'email' => 'email|required|string|unique:users',
-            'password' => 'required|string',
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'foto' => 'required|mimes:jpg,jpeg,bmp,png',
+            'file' => 'required|mimes:pdf',
         ]);
-        */
+        
         if($request->file != null){
             $foto = $request->file("file");
             $extension = $foto->getClientOriginalExtension();
@@ -74,7 +76,12 @@ class MaterialesController extends Controller
      */
     public function show($id)
     {
-        //
+        $material = Material::find($id);
+        if($material != null){
+            return view('showMaterial', compact('material'));
+        }
+        
+        return back();
     }
 
     /**
@@ -108,6 +115,8 @@ class MaterialesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = Material::find($id)->delete();
+        Session::flash('mensaje','Eliminado correctamente');
+        return back();
     }
 }

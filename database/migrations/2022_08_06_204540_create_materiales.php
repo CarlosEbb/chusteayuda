@@ -19,6 +19,7 @@ class CreateMateriales extends Migration
             $table->string('nombre');
             $table->text('descripcion');
             $table->string('imagen');
+            $table->boolean('tipo')->default(false);
             $table->string('archivo');
 
             $table->timestamps();

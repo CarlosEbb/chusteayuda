@@ -21,9 +21,6 @@
                     <input type="text" name="phone" value="51931145727" placeholder="Numero telefónico" hidden>
                   </div>
                   <div>
-                    <input type="email" placeholder="Correo electrónico">
-                  </div>
-                  <div>
                     <input type="text" name="text" placeholder="Mensaje" class="input_message">
                   </div>
                   <div class="d-flex justify-content-center">

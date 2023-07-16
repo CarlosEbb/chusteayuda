@@ -20,13 +20,13 @@
               <span>
                 Agendar cita
               </span>
-              <img src="images/right-arrow.png" alt="">
+              <img src="/images/right-arrow.png" alt="">
             </a>
           </div>
         </div>
         <div class="hero_img-container">
           <div>
-            <img src="images/hero.png" alt="" class="img-fluid">
+            <img src="/images/hero.png" alt="" class="img-fluid">
           </div>
         </div>
       </div>
@@ -38,12 +38,12 @@
   <section class="about_section">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-6">
+        <div class="col-12 col-sm-6">
           <div class=" d-flex justify-content-center">
-              <img src="images/sobre_mi.png" alt="" class="img-fluid" width="200%" height="400">
+              <img src="/images/sobre_mi.png" alt="" class="img-fluid w-100">
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-sm-6">
           <h2 class="main-heading ">
             Sobre mi
           </h2>
@@ -58,7 +58,7 @@
               <span>
                 Leer Más
               </span>
-              <img src="images/right-arrow.png" alt="">
+              <img src="/images/right-arrow.png" alt="">
             </a>
           </div>
         </div>
@@ -87,7 +87,7 @@
           @endphp
             @foreach(\App\Models\Material::latest()->take(4)->get() as $key => $value)
               <div @if($count == 0) class="carousel-item active" @else class="carousel-item" @endif>
-              <a href="{{$value->archivo}}" target="_blank">
+              <a href="/materiales/{{$value->id}}">
                 <div class="vehicle_img-box ">
                   <img src="{{$value->imagen}}" alt="" class="img-fluid w-100">
                 </div>
@@ -111,51 +111,6 @@
 
     </div>
   </section>
-
-
-  <!-- vehicle section -->
-  <!-- client section -->
-  <section class="client_section layout_padding">
-    <div class="container">
-      <h2 class="main-heading ">
-        Testimonios
-      </h2>
-      <p class="text-center">
-        There are many variations of passages of Lorem Ipsum available, but the majority hThere are many variations of
-        passages of Lorem Ipsum available, but the majority h
-      </p>
-      <div class="layout_padding2">
-        <div class="client_container d-flex flex-column">
-          <div class="client_detail d-flex align-items-center">
-            <div class="client_img-box ">
-              <img src="images/student.png" alt="">
-            </div>
-            <div class="client_detail-box">
-              <h4>
-                Veniam Quis
-              </h4>
-              <span>
-                (exercitation)
-              </span>
-            </div>
-          </div>
-          <div class="client_text mt-4">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum."
-
-
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
 
   <!-- contact section -->
