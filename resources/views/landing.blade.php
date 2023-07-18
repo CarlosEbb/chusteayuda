@@ -40,7 +40,7 @@
       <div class="row align-items-center">
         <div class="col-12 col-sm-6">
           <div class=" d-flex justify-content-center">
-              <img src="/images/sobre_mi.png" alt="" class="img-fluid w-100">
+              <img src="/images/sobre_mi.png" alt="" class="img-fluid">
           </div>
         </div>
         <div class="col-12 col-sm-6">

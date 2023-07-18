@@ -4,7 +4,7 @@
     
     <nav class="navbar navbar-expand-lg custom_nav-container">
         <a class="" href="/">
-            <img src="/images/logo.jpg" class="rounded-circle" alt="" width="100%" height="60">    
+            <img src="/images/logo.jpg" class="rounded-circle" alt="" height="60">    
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

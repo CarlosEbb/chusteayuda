@@ -15,14 +15,13 @@
               <div class="contact-form">
                 <form method="GET" action="https://api.whatsapp.com/send">
                   <div>
-                    <input type="text" placeholder="Nombre">
+                    <input type="text" id="nombre" placeholder="Nombre">
                   </div>
+                 
                   <div>
-                    <input type="text" name="phone" value="51931145727" placeholder="Numero telefónico" hidden>
+                    <input type="text" id="mensaje" placeholder="Mensaje" class="input_message">
                   </div>
-                  <div>
-                    <input type="text" name="text" placeholder="Mensaje" class="input_message">
-                  </div>
+                  <input type="text" name="text" id="mensaje_total" hidden>
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn_on-hover">
                       Enviar

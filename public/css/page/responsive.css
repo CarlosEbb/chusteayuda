@@ -49,6 +49,16 @@
         color: #fff;
     }
 
+    @media (min-width: 0) and (max-width: 993px) {
+
+        .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item.active .nav-link,
+        .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+
+            color: #fec913;
+        }
+      }
+    
+
     .custom_nav-container .nav_search-btn {
         background-image: url(../images/search-icon-mobile.png);
         background-position: center;

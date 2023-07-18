@@ -22,16 +22,16 @@
 
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                  <div class="d-flex justify-content-center mt-5">
                     <p class="text-justify">
                         Hola, soy Jesús Bolívar, licenciado en Terapia Ocupacional. Estoy aquí para ayudarte a mejorar tu calidad de vida y superar los desafíos diarios. A través de mi experiencia y conocimientos en terapia ocupacional, brindo apoyo personalizado y soluciones prácticas para maximizar tu independencia y bienestar. Explora mi sitio web para descubrir cómo juntos podemos alcanzar tus metas y mejorar tu salud física y mental. ¡Bienvenido y espero poder ser parte de tu viaje hacia una vida plena y significativa!"
                     </p>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <div class=" d-flex justify-content-center">
-                    <img src="images/sobre_mi.png" alt="" class="img-fluid" width="200%" height="400">
+                    <img src="images/sobre_mi_2.png" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
