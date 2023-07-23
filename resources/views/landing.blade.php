@@ -85,7 +85,7 @@
           @php
             $count = 0;
           @endphp
-            @foreach(\App\Models\Material::latest()->take(4)->get() as $key => $value)
+            @foreach(\App\Models\Material::latest()->where('tipo',0)->take(4)->get() as $key => $value)
               <div @if($count == 0) class="carousel-item active" @else class="carousel-item" @endif>
               <a href="/materiales/{{$value->id}}">
                 <div class="vehicle_img-box ">

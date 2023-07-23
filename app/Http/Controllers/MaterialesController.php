@@ -47,7 +47,7 @@ class MaterialesController extends Controller
             'foto' => 'required|mimes:jpg,jpeg,bmp,png',
             'file' => 'required|mimes:pdf',
         ]);
-        
+       
         if($request->file != null){
             $foto = $request->file("file");
             $extension = $foto->getClientOriginalExtension();
@@ -92,7 +92,12 @@ class MaterialesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $material = Material::find($id);
+        if($material != null){
+            return view('admin.materiales.editarMateriales', compact('material'));
+        }
+        
+        return back();
     }
 
     /**
@@ -104,7 +109,43 @@ class MaterialesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $materiales = Material::find($id);
+
+        
+        $arrayValidate = [
+            'nombre' => 'required',
+            'descripcion' => 'required',
+        ];
+        if($request->file != null){
+            $arrayValidate['file'] = 'required|mimes:pdf';
+        }
+        if($request->foto != null){
+            $arrayValidate['foto'] = 'required|mimes:jpg,jpeg,bmp,png';
+        }
+        
+        $datos = $this->validate(request(), $arrayValidate);
+       
+        if($request->file != null){
+            $foto = $request->file("file");
+            $extension = $foto->getClientOriginalExtension();
+            $url = Storage::disk('archivos')->put($foto->getFilename().".".$extension, File::get($foto));
+            $request['archivo'] = '/uploads/archivos/'.$foto->getFilename().".".$extension;
+        }
+
+        if($request->foto != null){
+            $foto = $request->file("foto");
+            $extension = $foto->getClientOriginalExtension();
+            $url = Storage::disk('materiales')->put($foto->getFilename().".".$extension, File::get($foto));
+            $request['imagen'] = '/uploads/materiales/'.$foto->getFilename().".".$extension;
+        }
+
+        $materiales = Material::find($id);
+        $materiales->fill($request->all())->save();
+
+
+        Session::flash('mensaje','Actualizado correctamente');
+        return back();
     }
 
     /**

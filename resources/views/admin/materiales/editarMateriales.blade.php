@@ -17,15 +17,14 @@
 
 <div class="row">
     <div class="col-lg-12 position-relative z-index-2">
-
         <div class="row">
             <div class="col-sm-6 col-12">
-                {!! Form::open(['route' => 'materiales.store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-                    @include('admin.materiales.datosMateriales', ['titulo' => 'Registrar'])
+                {!! Form::model($material, ['route' => ['materiales.update', $material->id], 'method' => 'put', 'enctype' => 'multipart/form-data']) !!}
+                    @include('admin.materiales.datosMateriales', ['titulo' => 'Editar'])
                 {!! Form::close() !!}
             </div>
             <div class="col-sm-6 col-12">
-                @include('admin.materiales.listarMateriales')
+                @include('admin.materiales.viewDocument', ['titulo' => 'Ver Material'])
             </div>
         </div>
     </div>
