@@ -24,7 +24,7 @@
 
                 Para acceder a estos valiosos recursos gratuitos, simplemente navega por la página web y selecciona los materiales que te interesen. No se requiere ningún tipo de registro ni pago. ¡Es tan fácil como hacer clic y descargar! 
 
-                Te invito a visitar la página regularmente, ya que actualizo y agregamos nuevo contenido de forma periódica. Además, no dudes en compartir estos recursos con tus amigos, colegas y en tus redes sociales. Cuanta más gente se beneficie de estos materiales gratuitos, mejor. 
+                Te invito a visitar la página regularmente, ya que actualizo y agregó nuevo contenido de forma periódica. Además, no dudes en compartir estos recursos con tus amigos, colegas y en tus redes sociales. Cuanta más gente se beneficie de estos materiales gratuitos, mejor. 
 
                 Agradezco tu visita y espero que encuentres los materiales que aquí se ofrecen útiles y enriquecedores. Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto a través de nuestro formulario de contacto. Estoy aquí para ayudarte. 
 
@@ -38,7 +38,7 @@
       <div class="container teacher_container layout_padding2">
         <div class="row">
           @foreach(\App\Models\Material::all()->where('tipo',0) as $key => $value)
-            <div class="col-3 card">
+            <div class="col-6 col-md-3 card">
               <a href="/materiales/{{$value->id}}" target="_blank">
                 <img class="card-img-top" src="{{$value->imagen}}" alt="Card image cap">
                 <div class="card-body">
