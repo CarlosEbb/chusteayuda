@@ -34,5 +34,5 @@
 @endsection
 
 @section('js')
-<script src="{{ asset('js/sidebars.js') }}"></script>
+    <script src="/js/admin/materiales.js"></script>
 @endsection

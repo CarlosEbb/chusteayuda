@@ -17,5 +17,6 @@ class Material extends Model
         'imagen',
         'archivo',
         'tipo',
+        'precio',
     ];
 }

@@ -57,6 +57,7 @@
 
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="/js/material-dashboard.min.js?v=3.1.0"></script>
+  @yield('js')
 </body>
 
 </html>

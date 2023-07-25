@@ -47,7 +47,7 @@
           <h2 class="main-heading ">
             Sobre mi
           </h2>
-          <p class="text-center">
+          <p class="text-justify">
             Lic. Jesús Bolívar <br>
             Con una trayectoria de más de 6 años enfocada en la atención de niños y adultos en situación de desventaja ocupacional, mi objetivo principal es continuar con mi formación en el área de la ciencia ocupacional a través de la obtención de una maestría y posterior un doctorado en el área, los cuáles me permitan realizar aportes importantes al sistema de salud y educación en el mundo.
 

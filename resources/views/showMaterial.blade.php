@@ -27,8 +27,11 @@
           $text = "Hola, estoy interesad@ en comprar: ".$material->nombre;
           $mensaje_para_url = urlencode($text);
         @endphp
-        <a href="https://api.whatsapp.com/send?phone=51931145727&text={{$mensaje_para_url}}" download="{{$material->nombre}}" class="btn btn-lg btn-block btn-success">Comprar</a>
+        <a href="https://api.whatsapp.com/send?phone=51931145727&text={{$mensaje_para_url}}" download="{{$material->nombre}}" class="btn btn-lg btn-block btn-success">Comprar a S/{{$material->precio}}</a>
       </div>
+
+      <br><br><br>
+
       <div class="col-12 d-none d-md-block">
         <embed src="{{$material->archivo}}" type="application/pdf" width="100%" height="600px" />
       </div>

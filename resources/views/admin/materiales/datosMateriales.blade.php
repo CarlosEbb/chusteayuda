@@ -36,6 +36,7 @@
                         <label class="form-label">Publicado</label>
                         <input type="text" class="form-control" id="publicado" name="" readonly value="chusTEAyuda" disabled>
                     </div>
+                    
 
                     <div class="input-group input-group-outline mb-3" hidden>
                         <label class="form-label">Publicado</label>
@@ -43,9 +44,15 @@
                     </div>
 
                     <div class="form-check form-switch d-flex align-items-center mb-3">
-                        <input class="form-check-input" type="checkbox" id="rememberMe" name="tipo" value="1"  @if(Route::currentRouteName() == 'materiales.edit') @if($material->tipo == 1) checked @endif @endif>
-                        <label class="form-check-label mb-0 ms-3" for="rememberMe">De pago(Tienda)</label>
+                        <input class="form-check-input" type="checkbox" id="tienda" name="tipo" value="1"  @if(Route::currentRouteName() == 'materiales.edit') @if($material->tipo == 1) checked @endif @endif>
+                        <label class="form-check-label mb-0 ms-3" for="tienda">De pago(Tienda)</label>
                     </div>
+
+                    <div id="precio" class="input-group input-group-outline my-3 @if(old('precio') != null or Route::currentRouteName() == 'materiales.edit')focused is-focused @endif @if(Route::currentRouteName() == 'materiales.edit') @if($material->tipo == 0) d-none @endif @else d-none @endif">
+                        <label class="form-label">Precio</label>
+                        <input type="number" id="precioInput" class="form-control" step="0.01" min="0.00" name="precio" @if(Route::currentRouteName() == 'materiales.edit') value="{{$material->precio}}" @else value="{{old('precio')}}" @endif>
+                    </div>
+
 
                     <div class="text-center">
                         <button type="submit" class="btn bg-gradient-info w-100 my-4 mb-2">Guardar</button>
