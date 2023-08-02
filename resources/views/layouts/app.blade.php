@@ -50,7 +50,6 @@
   <script type="text/javascript" src="/js/code.jquery.com_jquery-3.7.0.min.js"></script>
   <!-- <script type="text/javascript" src="/js/page/jquery-3.4.1.min.js"></script> -->
   <script type="text/javascript" src="/js/page/bootstrap.js"></script>
-  <script type="text/javascript" src="/js/page/bootstrap.js"></script>
    @yield('js')
 </body>
 </html>

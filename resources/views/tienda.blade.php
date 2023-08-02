@@ -35,7 +35,7 @@
       <div class="container teacher_container layout_padding2">
         <div class="row">
           @foreach(\App\Models\Material::all()->where('tipo',1) as $key => $value)
-            <div class="col-3 card">
+            <div class="col-6 col-md-3 card">
               <a href="/materiales/{{$value->id}}" target="_blank">
                 <img class="card-img-top" src="{{$value->imagen}}" alt="Card image cap">
                 <div class="card-body">
