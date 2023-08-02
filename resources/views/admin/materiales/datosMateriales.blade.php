@@ -10,10 +10,15 @@
             </div>
             <div class="card-footer p-3">
                     @if(Route::currentRouteName() == 'materiales.edit')
-                        <div class="col-4 offset-4">
-                            <img class="card-img-top" src="{{$material->imagen}}" alt="Card image cap">
+                        <div class="row">
+                            @foreach ($material->images as $image)
+                            <div class="col-2">
+                                <img src="{{ asset($image->ruta) }}" alt="Imagen {{ $image->id }}" width="100px">
+                            </div>
+                            @endforeach
                         </div>
                     @endif
+                    
                     <div class="input-group input-group-outline my-3 @if(old('nombre') != null or Route::currentRouteName() == 'materiales.edit')focused is-focused @endif">
                         <label class="form-label">Titulo</label>
                         <input type="text" class="form-control" name="nombre" @if(Route::currentRouteName() == 'materiales.edit') value="{{$material->nombre}}" @else value="{{old('nombre')}}" @endif required>
@@ -24,14 +29,18 @@
                     </div>
                     <label class="form-label">Material PDF</label>
                     <div class="input-group input-group-outline mb-3">
-                        <input class="form-control" type="file" name="file" @if(Route::currentRouteName() != 'materiales.edit') required @endif>
+                        <input class="form-control" type="file" name="file" accept="application/pdf" @if(Route::currentRouteName() != 'materiales.edit') required @endif>
                     </div>
 
                     <label class="form-label">Foto 384x365</label>
                     <div class="input-group input-group-outline mb-3">
-                        <input class="form-control" type="file" name="foto" @if(Route::currentRouteName() != 'materiales.edit') required @endif>
+                        <input id="foto" class="form-control" type="file" name="foto[]" accept="image/*" multiple @if(Route::currentRouteName() != 'materiales.edit') required @endif>
                     </div>
-
+                    
+                    <div id="imagenesSeleccionadasContainer">
+                    <!-- Aquí se mostrarán las imágenes seleccionadas -->
+                    </div>
+                    <br>
                     <div class="input-group input-group-outline mb-3 focused is-focused">
                         <label class="form-label">Publicado</label>
                         <input type="text" class="form-control" id="publicado" name="" readonly value="chusTEAyuda" disabled>

@@ -40,7 +40,7 @@
           @foreach(\App\Models\Material::all()->where('tipo',0) as $key => $value)
             <div class="col-6 col-md-3 card">
               <a href="/materiales/{{$value->id}}" target="_blank">
-                <img class="card-img-top" src="{{$value->imagen}}" alt="Card image cap">
+                <img class="card-img-top" src="{{$value->images->first()->ruta ?? '/images/no_imagen.jpg'}}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{$value->nombre}}</h5>
                 </div>

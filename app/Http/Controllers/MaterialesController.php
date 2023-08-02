@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Material;
+use \App\Models\ImageMaterial;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Auth;
 use Redirect;
 use Session;
@@ -40,11 +42,11 @@ class MaterialesController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $datos = $this->validate(request(), [
             'nombre' => 'required',
             'descripcion' => 'required',
-            'foto' => 'required|mimes:jpg,jpeg,bmp,png',
+            //'foto' => 'required|mimes:jpg,jpeg,bmp,png',
             'file' => 'required|mimes:pdf',
         ]);
        
@@ -54,15 +56,23 @@ class MaterialesController extends Controller
             $url = Storage::disk('archivos')->put($foto->getFilename().".".$extension, File::get($foto));
             $request['archivo'] = '/uploads/archivos/'.$foto->getFilename().".".$extension;
         }
-
-        if($request->foto != null){
-            $foto = $request->file("foto");
-            $extension = $foto->getClientOriginalExtension();
-            $url = Storage::disk('materiales')->put($foto->getFilename().".".$extension, File::get($foto));
-            $request['imagen'] = '/uploads/materiales/'.$foto->getFilename().".".$extension;
-        }
-
+        
         $materiales = Material::create($request->all());
+
+
+        if($request->hasFile('foto')) {
+            $fotos = $request->file('foto');
+            foreach ($fotos as $foto) {
+                $extension = $foto->getClientOriginalExtension();
+                $ruta = Str::uuid() . '.' . $extension;
+                Storage::disk('materiales')->put($ruta, File::get($foto));
+
+                ImageMaterial::create([
+                    'material_id' => $materiales->id,
+                    'ruta' => '/uploads/materiales/'.$ruta,
+                ]);
+            }
+        }
 
         Session::flash('mensaje','Registrado correctamente');
         return back();
@@ -109,7 +119,6 @@ class MaterialesController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $materiales = Material::find($id);
 
         
@@ -120,9 +129,9 @@ class MaterialesController extends Controller
         if($request->file != null){
             $arrayValidate['file'] = 'required|mimes:pdf';
         }
-        if($request->foto != null){
-            $arrayValidate['foto'] = 'required|mimes:jpg,jpeg,bmp,png';
-        }
+        //if($request->foto != null){
+            //$arrayValidate['foto'] = 'required|mimes:jpg,jpeg,bmp,png';
+        //}
         
         $datos = $this->validate(request(), $arrayValidate);
        
@@ -133,11 +142,30 @@ class MaterialesController extends Controller
             $request['archivo'] = '/uploads/archivos/'.$foto->getFilename().".".$extension;
         }
 
-        if($request->foto != null){
-            $foto = $request->file("foto");
-            $extension = $foto->getClientOriginalExtension();
-            $url = Storage::disk('materiales')->put($foto->getFilename().".".$extension, File::get($foto));
-            $request['imagen'] = '/uploads/materiales/'.$foto->getFilename().".".$extension;
+
+        // Obtener todas las imágenes relacionadas con el material
+        $imagenes = ImageMaterial::where('material_id', $materiales->id)->get();
+
+        // Eliminar cada imagen y su archivo asociado
+        foreach ($imagenes as $imagen) {
+            $location = 'materiales';
+            Storage::disk($location)->delete(str_replace('/uploads/'.$location.'/','',$imagen->ruta));
+            $imagen->delete();
+        }
+
+
+        if($request->hasFile('foto')) {
+            $fotos = $request->file('foto');
+            foreach ($fotos as $foto) {
+                $extension = $foto->getClientOriginalExtension();
+                $ruta = Str::uuid() . '.' . $extension;
+                Storage::disk('materiales')->put($ruta, File::get($foto));
+
+                ImageMaterial::create([
+                    'material_id' => $materiales->id,
+                    'ruta' => '/uploads/materiales/'.$ruta,
+                ]);
+            }
         }
 
         $materiales = Material::find($id);

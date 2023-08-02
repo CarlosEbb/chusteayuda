@@ -14,7 +14,7 @@
   <link href="/css/page/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="/css/page/responsive.css" rel="stylesheet" />
-
+  @yield('css')
 </head>
 @include("layouts.headGoogle")
 <body>

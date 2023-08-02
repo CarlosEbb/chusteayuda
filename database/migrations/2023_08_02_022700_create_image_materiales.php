@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMateriales extends Migration
+class CreateImageMateriales extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateMateriales extends Migration
      */
     public function up()
     {
-        Schema::create('materiales', function (Blueprint $table) {
+        Schema::create('image_materiales', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('nombre');
-            $table->text('descripcion');
-            $table->boolean('tipo')->default(false);
-            $table->string('archivo');
+            $table->integer('material_id')->unsigned();
+            $table->foreign('material_id')->references('id')->on('materiales')->onDelete('cascade')->onUpdate('cascade');
 
+            $table->string('ruta');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateMateriales extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materiales');
+        Schema::dropIfExists('image_materiales');
     }
 }

@@ -14,9 +14,13 @@ class Material extends Model
     protected $fillable = [
         'nombre',
         'descripcion',
-        'imagen',
         'archivo',
         'tipo',
         'precio',
     ];
+
+    public function images()
+    {
+        return $this->hasMany(ImageMaterial::class);
+    }
 }

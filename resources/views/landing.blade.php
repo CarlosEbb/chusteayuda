@@ -89,7 +89,7 @@
               <div @if($count == 0) class="carousel-item active" @else class="carousel-item" @endif>
               <a href="/materiales/{{$value->id}}">
                 <div class="vehicle_img-box ">
-                  <img src="{{$value->imagen}}" alt="" class="img-fluid w-100">
+                  <img src="{{$value->images->first()->ruta ?? '/images/no_imagen.jpg'}}" alt="" class="img-fluid w-100">
                 </div>
               </a>
               </div>
